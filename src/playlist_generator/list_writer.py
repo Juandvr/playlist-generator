@@ -17,8 +17,8 @@ def list_writer():
                 writer.writerow(['title', 'artist'])
 
             try:
-                title = ''.join(song_data['title'])
-                artist = ''.join(song_data['artist'])
+                title = ''.join(song_data['title']) # type: ignore
+                artist = ''.join(song_data['artist']) # type: ignore
                 writer.writerow([title, artist])
             except KeyError:
                 song_data = EasyMP3(song)
