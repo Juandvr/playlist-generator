@@ -10,7 +10,7 @@ def create_csv():
     for song in songs:
         song_data = File(song)
 
-        with open('songs.csv', 'a', newline='', encoding='utf-8') as file:
+        with open('songs.csv', 'w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
 
             if file.tell() == 0:
