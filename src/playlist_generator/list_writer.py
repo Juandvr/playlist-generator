@@ -6,7 +6,7 @@ import csv
 music_folder = Path('/home/juandvr/Music')
 songs = list(music_folder.rglob('*.flac')) + list(music_folder.rglob('*.mp3'))
 
-def list_writer():
+def create_csv():
     for song in songs:
         song_data = File(song)
 

@@ -1,3 +1,3 @@
-from playlist_generator.list_writer import list_writer
+from playlist_generator.list_writer import create_csv
 
-list_writer()
+create_csv()
