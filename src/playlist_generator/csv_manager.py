@@ -25,3 +25,12 @@ def create_csv():
                 title = ''.join(song_data['title'])
                 artist = ''.join(song_data['artist'])
                 writer.writerow([title, artist])
+
+def read_csv():
+    songs_csv = Path('./songs.csv')
+    songs_list = []
+
+    with songs_csv.open(mode='r', encoding='utf-8', newline='') as file:
+        songs_list = list(csv.DictReader(file))
+
+    return songs_list
