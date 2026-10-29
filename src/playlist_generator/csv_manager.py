@@ -3,14 +3,11 @@ from mutagen import File
 from mutagen.mp3 import EasyMP3
 import csv
 
-music_folder = Path('/home/juandvr/Music')
-songs = list(music_folder.rglob('*.flac')) + list(music_folder.rglob('*.mp3'))
-
-def create_csv():
+def create_csv(songs):
     for song in songs:
         song_data = File(song)
 
-        with open('songs.csv', 'w', newline='', encoding='utf-8') as file:
+        with open('songs.csv', 'a', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
 
             if file.tell() == 0:
