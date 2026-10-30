@@ -1,10 +1,14 @@
-from ytmusicapi import YTMusic
+from ytmusicapi import YTMusic, OAuthCredentials
 from playlist_generator.csv_manager import read_csv
+from keys import CLIENT_ID, CLIENT_SECRET
 
-ytmusic = YTMusic('browser.json')
+client_id = CLIENT_ID
+client_secret = CLIENT_SECRET
+
+ytmusic = YTMusic('oauth.json', oauth_credentials=OAuthCredentials(client_id, client_secret))
 
 def create_playlist():
-    playlistId = ytmusic.create_playlist('Awesome mix #2', 'test description')
+    playlistId = ytmusic.create_playlist('test', 'test description')
     songs = read_csv()
 
     for song in songs:

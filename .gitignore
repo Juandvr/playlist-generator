@@ -223,4 +223,5 @@ __marimo__/
 songs.csv
 
 # auth json
-browser.json
+oauth.json
+keys.py
